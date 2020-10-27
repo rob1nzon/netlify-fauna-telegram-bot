@@ -4,6 +4,8 @@
 [template.environment]
   FAUNA_SECRET_KEY = "FaunaDB secret key here"
   TELEGRAM_BOT_TOKEN = "Telegram bot token here"
+  COOKIES = "Enter your cookies here"
+  CAMERA_UID = "7ffd5676-ea4f-4abb-9ec7-45bb0e10d71f"
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

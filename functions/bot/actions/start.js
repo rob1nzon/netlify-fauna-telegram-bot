@@ -13,7 +13,7 @@ module.exports = async ctx => {
     if (isNewUser) {
       return ctx.reply(`Added ${name} to db!`)
     }else{
-      return ctx.reply(`${name} is already inside db!`)
+      return ctx.reply(`${name}, for smotret' kak Nicolay zret say /kek@nicolayzret_bot `)
     }
    
   } catch (e) {

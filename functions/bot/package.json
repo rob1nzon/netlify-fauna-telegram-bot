@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "faunadb": "^2.13.0",
-    "telegraf": "^3.36.0"
+    "telegraf": "^3.36.0",
+    "request": "*",
+    "stream-handbook": "*",
+    "telegraf-inline-menu": "*"
   }
 }
