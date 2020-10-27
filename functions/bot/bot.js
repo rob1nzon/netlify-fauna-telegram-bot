@@ -8,15 +8,15 @@ bot.start(ctx => {
   return startAction(ctx)
 })
 bot.command('oldschool', (ctx) => ctx.reply('Hello man'))
-bot.command('amd', (ctx) => {
+bot.command('t', (ctx) => {
   console.log(ctx.message.text);
   var options = {
-  url: 'https://query2.finance.yahoo.com/v7/finance/options/amd'};
+  url: 'https://query2.finance.yahoo.com/v7/finance/options/'+ctx.message.text.split(' ')[1]};
   function callback(error, response, body) {
   if (!error && response.statusCode == 200) {
       console.log(body);
       tiker=JSON.parse(body);
-      ctx.reply('AMD '+tiker['optionChain']['result'][0]['quote']['regularMarketPrice']);
+      ctx.reply(tiker['optionChain']['result'][0]['quote']['shortName']+' '+tiker['optionChain']['result'][0]['quote']['regularMarketPrice']);
       
   }
   else {
