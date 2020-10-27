@@ -1,5 +1,6 @@
 const Telegraf = require('telegraf');
 const startAction = require('./actions/start')
+var request = require('request');
 
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
@@ -7,6 +8,24 @@ bot.start(ctx => {
   return startAction(ctx)
 })
 bot.command('oldschool', (ctx) => ctx.reply('Hello man'))
+bot.command('amd', (ctx) => {
+  console.log(ctx.message.text);
+  var options = {
+  url: 'https://query2.finance.yahoo.com/v7/finance/options/amd'};
+  function callback(error, response, body) {
+  if (!error && response.statusCode == 200) {
+      console.log(body);
+      tiker=JSON.parse(body);
+      ctx.reply('AMD '+tiker['optionChain']['result'][0]['quote']['regularMarketPrice']);
+      
+  }
+  else {
+    ctx.reply(response.statusCode);
+  }
+  }
+  request(options, callback);
+
+})
 
 exports.handler = async event => {
   try {
