@@ -17,19 +17,21 @@ function getRandomInt(min, max) {
 
 function getTik(t) {
   console.log(t);
+  const msg = '';
   var options = {
     url: 'https://query2.finance.yahoo.com/v7/finance/options/'+t};
     function callback(error, response, body) {
     if (!error && response.statusCode == 200) {
         console.log(body);
         tiker=JSON.parse(body);
-        return tiker['optionChain']['result'][0]['quote']['shortName']+' '+tiker['optionChain']['result'][0]['quote']['regularMarketPrice'];
+        msg=tiker['optionChain']['result'][0]['quote']['shortName']+' '+tiker['optionChain']['result'][0]['quote']['regularMarketPrice'];
     }
     else {
-      return "None";
+      msg="None";
     }
     }
     request(options, callback);
+    return msg;
 }
 
 bot.start(ctx => {
