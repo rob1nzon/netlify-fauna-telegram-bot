@@ -11,9 +11,9 @@ module.exports = async ctx => {
   try {
     let isNewUser = await newUser(id)
     if (isNewUser) {
-      return ctx.reply(`Added ${name} to db!`)
+      return ctx.reply(`Я ТЕБЯ ЗАПОНМЮ ${name}!`)
     }else{
-      return ctx.reply(`${name} is already inside db!`)
+      return ctx.reply(`${name} Я ТЕБЯ ЗНАЮ!`)
     }
    
   } catch (e) {
