@@ -9,12 +9,7 @@ module.exports = async ctx => {
   }
 
   try {
-    let isNewUser = await newUser(id)
-    if (isNewUser) {
-      return ctx.reply(`Я ТЕБЯ ЗАПОНМЮ ${name}!`)
-    }else{
-      return ctx.reply(`${name} Я ТЕБЯ ЗНАЮ!`)
-    }
+    return ctx.reply(`Привет. Нажми кнопку чтобы увидеть информацию обо мне 👇 или можно перейти на сайт https://taplink.cc/oksana_chentsova_psy`)
    
   } catch (e) {
     return ctx.reply(`Error occured`)

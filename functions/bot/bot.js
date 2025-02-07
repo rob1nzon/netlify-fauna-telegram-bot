@@ -18,13 +18,7 @@ function getRandomInt(min, max) {
 bot.start(ctx => {
   return startAction(ctx)
 })
-answer = ['поку-ку-ку-ку-пай','продавай', 'шортим', '¯\_(ツ)_/¯']
-bot.command('petu', (ctx) => ctx.reply(answer[getRandomInt(0,answer.length)]));
 
-bot.on('message', (ctx) => {
-  console.log(ctx.message.text)
-  ctx.reply(ctx.message.text.toUpperCase())
-  })
 // ctx.reply(' '+getTik(ctx.message.text.split(' ')[1]))})
 // const menuMiddleware = new MenuMiddleware('/', menuTemplate)
 // bot.command('tt', ctx => menuMiddleware.replyToContext(ctx, '123'))

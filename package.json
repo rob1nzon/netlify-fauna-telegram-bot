@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "netlify-lambda": "^1.6.3"
+    "netlify-lambda": "^1.6.3",
+    "faunadb": "^2.13.0",
+    "telegraf": "^3.36.0",
+    "request": "*",
+    "stream-handbook": "*",
+    "telegraf-inline-menu": "*"
   }
 }
